@@ -1,10 +1,16 @@
+import { BrowserRouter as Router } from "react-router-dom";
+
+import AppRouter from "../routes/AppRouter";
+
 import styles from "./app.module.css";
 
 const App = () => {
   return (
-    <div className={styles.root}>
-      <h1>ACME products</h1>
-    </div>
+    <Router>
+      <div className={styles.root}>
+      <AppRouter />
+      </div>
+    </Router>
   );
 };
 
