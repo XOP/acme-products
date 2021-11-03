@@ -1,2 +1,3 @@
-# acme-products
+# ACME-products
+
 ACME products showcase
