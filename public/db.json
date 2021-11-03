@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Item One",
+    "details": "Bacon ipsum dolor amet sausage short ribs buffalo shoulder. Flank sirloin chuck tri-tip porchetta meatloaf turducken shankle alcatra.",
+    "imageUrl": "https://res.cloudinary.com/wdybih/image/upload/v1634935604/samples/ecommerce/analog-classic.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Item Two",
+    "details": "Landjaeger shank hamburger, pork pastrami porchetta boudin sirloin chislic. Corned beef prosciutto salami chislic jowl pork tenderloin cupim.",
+    "imageUrl": "https://res.cloudinary.com/wdybih/image/upload/v1634935604/samples/ecommerce/analog-classic.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Item Three",
+    "details": "Alcatra bacon kielbasa meatloaf pork loin salami, bresaola pancetta boudin pork chop pig",
+    "imageUrl": "https://res.cloudinary.com/wdybih/image/upload/v1634935604/samples/ecommerce/analog-classic.jpg"
+  }
+]
