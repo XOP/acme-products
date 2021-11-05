@@ -3,8 +3,20 @@
   text-decoration: none;
 
   border-bottom: var(--border-size-heavy) solid transparent;
+  transition: all ease-out .2s;
 }
 
 .__active {
-  border-bottom-color: var(--color-dark-temp);
+  border-color: var(--color-dark-temp);
 }
+
+@media (hover: hover) {
+  .link:not(.__active) {
+    border-bottom-style: dotted;
+  }
+
+  .link:not(.__active):hover {
+    border-color: var(--color-dark-temp);
+    border-bottom-style: dotted;
+  }
+} 
