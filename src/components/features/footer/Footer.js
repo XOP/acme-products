@@ -38,7 +38,7 @@ const Footer = () => {
     >
       <div className={styles.content}>
         <p>ACME company is well represented by the following brands:</p>
-        <Flow wrap space="1">
+        <Flow wrap space="0.5">
           {linksData.map((link) => {
             return (
               <FootLink key={link.href} href={link.href} title={link.title}>

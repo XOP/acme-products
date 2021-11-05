@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 
-import { routeNames } from "../../routes";
-
 import { fetchItems, itemsSelector, statusSelector } from "../../redux/slices/itemsSlice";
 import { STATUS } from "../../redux/globals";
 
@@ -19,8 +17,6 @@ const ListView = () => {
 
   return (
     <div>
-      List page
-      <hr />
       <div>
         {(status === STATUS.loading || status === STATUS.init) && (
           <div>
@@ -39,7 +35,6 @@ const ListView = () => {
           })}
       </div>
       <hr />
-      <Link to={routeNames.INTRO}>To Intro page</Link>
       <Outlet />
     </div>
   );

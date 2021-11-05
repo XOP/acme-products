@@ -18,7 +18,7 @@ const App = () => {
         <Support>
           <Header />
           <FlexUnit fluid>
-            <Contain space="1">
+            <Contain space="1" as="main">
               <AppRouter />
             </Contain>
           </FlexUnit>
