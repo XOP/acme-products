@@ -1,0 +1,5 @@
+.root.root {
+  font-size: var(--font-size-n);
+  background: var(--color-theme-temp);
+  color: var(--color-dark-temp);
+}

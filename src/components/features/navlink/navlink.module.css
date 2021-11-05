@@ -1,0 +1,10 @@
+.link {
+  color: var(--color-dark-temp);
+  text-decoration: none;
+
+  border-bottom: var(--border-size-heavy) solid transparent;
+}
+
+.__active {
+  border-bottom-color: var(--color-dark-temp);
+}
