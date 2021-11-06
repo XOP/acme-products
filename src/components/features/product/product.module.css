@@ -1,0 +1,11 @@
+.root {
+  position: relative;
+  width: 100%;
+}
+
+.badges {
+  width: 100%;
+  position: absolute;
+  top: calc(var(--space-one) + var(--space-half));
+  left: calc(var(--space-one) + var(--space-half));
+}
