@@ -20,6 +20,7 @@ class Product {
     this.id = nanoid();
     this.year = year;
     this.title = title;
+    this.imgSrc = `https://picsum.photos/id/${~~(Math.random() * 1000)}/600/340`;
     this.details = jabber.createParagraph(18);
     this.attrRare = Math.random() > 0.9;
     this.attrFancy = Math.random() > 0.6;

@@ -49,18 +49,18 @@ const ListView = () => {
           <section className={styles.root}>
             {!!items.length &&
               items.map(
-                ({ id, title, year, price, category, attrFancy, attrRare }) => {
+                ({ id, title, year, imgSrc, price, category, attrFancy, attrRare }) => {
                   return (
                     <FlexUnit
                       grow="1"
                       fluid
-                      justify="stretch"
                       align="stretch"
                       className={styles.item}
                     >
                       <Product
                         key={id}
                         year={year}
+                        imgSrc={imgSrc}
                         price={price}
                         category={category}
                         attrFancy={attrFancy}

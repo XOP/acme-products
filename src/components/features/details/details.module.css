@@ -1,0 +1,37 @@
+.root {
+  height: calc(100vh - var(--space-two) * 2);
+  max-width: 720px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+.content {
+  position: relative;
+}
+
+.picture {
+  box-shadow: 
+    0 4px 16px -12px var(--color-dark-temp),
+    0 2px 10px -6px var(--color-dark-temp);
+}
+
+.media {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--space-one-and-half);
+}
+
+@media screen and (min-width: 780px) {
+  .media {
+    flex-direction: row;
+  }
+
+  .media_image {
+    flex: 55% 1;
+  }
+
+  .media_main {
+    flex: 45% 1;
+  }
+}
+

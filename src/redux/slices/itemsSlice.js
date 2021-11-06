@@ -93,5 +93,6 @@ export const { modalToggle } = itemsSlice.actions;
 export const statusSelector = (state) => state.items.status;
 export const errorSelector = (state) => state.items.error;
 export const itemsSelector = (state) => state.items.items;
+export const itemSelector = (state, _id) => state.items.items.find(({id}) => (id === _id));
 
 export default itemsSlice.reducer;
