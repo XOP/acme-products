@@ -3327,8 +3327,10 @@ chokidar@^3.4.1:
   optionalDependencies:
     fsevents "~2.3.1"
 
-"choom@file:../wombat/packages/choom":
-  version "0.0.4"
+choom@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/choom/-/choom-0.0.5.tgz#ed47c2f6d429721473a279a42bd4ec34610228dc"
+  integrity sha512-d2lFD4loa+nJOSGoMBsSyzpZV9GJWyAuAT2n4V8RcSiRDKjPZ3ydx5+WgqNW2rMzruF3I3u077FMeM5ntPOKzQ==
   dependencies:
     "@emotion/react" "^11.0.0"
     nanoid "^3.1.29"

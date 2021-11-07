@@ -32,13 +32,13 @@ class Product {
 
 async function generateData() {
   try {
-    const res = await axios.get("https://www.acme.com/catalog/acme.txt", {
+    const res = await axios.get("https://xop.github.io/acme-db/db.txt", {
       responseType: "text",
     });
 
     let data = await res.data;
 
-    data = data.split("\r\n");
+    data = data.split("\n");
     data = data.map((item) => {
       let title = item.match(/[\w\s-\.\0-9]+\-\"/);
       let year = item.match(/\/[0-9]{4}/);
