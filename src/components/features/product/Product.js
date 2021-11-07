@@ -1,7 +1,7 @@
 import {
   IconCalendarEvent,
   IconTag,
-  IconBookmark,
+  // IconBookmark,
   IconStar,
   IconStars,
   IconCoin,
@@ -62,6 +62,7 @@ const Product = ({
           <IconBookmark />
         </Icon>
          */}
+
         <div>
           <Tag icon={<IconCalendarEvent />} title={`Production year: ${year}`}>
             {year}

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Outlet } from "react-router-dom";
+import { forceCheck } from "react-lazyload";
 
 import Heading from "choom/lib/components/heading/Heading";
 import Flow from "choom/lib/components/layout/Flow";
@@ -27,6 +28,10 @@ const ListView = () => {
 
   const status = useSelector(statusSelector);
   const items = useSelector(filteredItemsSelector);
+
+  useEffect(() => {
+    forceCheck();
+  }, [items]);
 
   const navigate = useNavigate();
 

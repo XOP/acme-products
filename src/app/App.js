@@ -11,6 +11,8 @@ import store from "../redux/configure";
 import { Header } from "../components/features/header/Header";
 import { Footer } from "../components/features/footer/Footer";
 
+import styles from './app.module.css';
+
 const App = () => {
   return (
     <Provider store={store}>
@@ -18,7 +20,7 @@ const App = () => {
         <Support>
           <Header />
           <FlexUnit fluid>
-            <Contain space="1" as="main">
+            <Contain space="1" as="main" className={styles.app}>
               <AppRouter />
             </Contain>
           </FlexUnit>

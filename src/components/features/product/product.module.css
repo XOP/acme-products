@@ -1,6 +1,15 @@
 .root {
   position: relative;
   width: 100%;
+
+  transition: all .15s ease-in-out;
+}
+
+@media (hover:hover) {
+  .root:hover {
+    transform: scale(1.035);
+    filter: drop-shadow(0 var(--space-quarter) var(--space-half) var(--color-theme-temp));
+  }
 }
 
 .badges {

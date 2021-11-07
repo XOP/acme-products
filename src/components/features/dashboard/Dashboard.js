@@ -1,37 +1,101 @@
-import {} from "@tabler/icons";
+import { useSelector, useDispatch } from "react-redux";
 
-import Button from "choom/lib/components/button/Button";
+import { IconStars, IconStar } from "@tabler/icons";
+
 import Flow from "choom/lib/components/layout/Flow";
 import FlexUnit from "choom/lib/components/layout/FlexUnit";
 import Heading from "choom/lib/components/heading/Heading";
-import Icon from "choom/lib/components/icon/Icon";
-import Media from "choom/lib/components/layout/Media";
 import Panel from "choom/lib/components/panel/Panel";
 import Select from "choom/lib/components/select/Select";
 import SelectOption from "choom/lib/components/select/SelectOption";
 import Space from "choom/lib/components/space/Space";
-import Stack from "choom/lib/components/layout/Stack";
 
-import styles from "./dashboard.module.css";
+import { Toggle } from "../../shared/toggle/Toggle";
+
+import {
+  rareAttrSelector,
+  fancyAttrSelector,
+  categorySelector,
+  rareToggle,
+  fancyToggle,
+  categoryChange,
+  itemCategoriesSelector,
+  itemsAmountSelector,
+  filteredItemsAmountSelector,
+} from "../../../redux/slices/itemsSlice";
 
 const Dashboard = () => {
+  const isFancyAttr = useSelector(fancyAttrSelector);
+  const isRareAttr = useSelector(rareAttrSelector);
+  const currentCategory = useSelector(categorySelector);
+  const categories = useSelector(itemCategoriesSelector);
+
+  const totalAmount = useSelector(itemsAmountSelector);
+  const filteredAmount = useSelector(filteredItemsAmountSelector);
+
+  const dispatch = useDispatch();
+
+  const handleFancy = (val) => dispatch(fancyToggle(val));
+  const handleRare = (val) => dispatch(rareToggle(val));
+  const handleCategory = (val) => dispatch(categoryChange(val));
+
+  let filterMessage = "";
+
+  if (filteredAmount === 0) {
+    filterMessage = "ACME hasn't produced matching items... yet"
+  } else if (totalAmount === filteredAmount) {
+    filterMessage = `ACME catalogue counts ${totalAmount} items:`
+  } else {
+    const s = filteredAmount > 1 ? "s" : "";
+
+    filterMessage = `Groovy! We found ${filteredAmount} matching item${s}!`;
+  }
+
   return (
     <>
       <Panel as="section" position="relative" placement="top" padding="1">
-        <Flow space="1">
+        <Flow wrap space="2">
           <FlexUnit>
-            <Select value="1">
-              <SelectOption value="1">One</SelectOption>
-            </Select>
+            <Flow wrap={false} space="2">
+              <FlexUnit>
+                <Toggle
+                  icon={<IconStar />}
+                  checked={isFancyAttr}
+                  onChange={handleFancy}
+                >
+                  Fancy
+                </Toggle>
+              </FlexUnit>
+              <FlexUnit>
+                <Toggle
+                  icon={<IconStars />}
+                  checked={isRareAttr}
+                  onChange={handleRare}
+                >
+                  Rare
+                </Toggle>
+              </FlexUnit>
+            </Flow>
           </FlexUnit>
-          <FlexUnit>
-            <Select value="2">
-              <SelectOption value="2">Two</SelectOption>
+          <FlexUnit basis="50%">
+            <Select value={currentCategory} onChange={handleCategory}>
+              {categories.map((cat) => {
+                return (
+                  <SelectOption key={cat} value={cat}>
+                    {cat === "placeholder" ? "All categories" : cat}
+                  </SelectOption>
+                );
+              })}
             </Select>
           </FlexUnit>
         </Flow>
       </Panel>
       <Space size="1" />
+      {filterMessage && (
+        <Heading as="div" level="4" mb="1.5">
+          {filterMessage}
+        </Heading>
+      )}
     </>
   );
 };

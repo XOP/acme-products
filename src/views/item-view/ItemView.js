@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -22,10 +21,6 @@ const ItemView = () => {
   const isError = status === STATUS.error;
 
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchCache(movie));
-  // }, [dispatch, movie]);
 
   const navigate = useNavigate();
 
