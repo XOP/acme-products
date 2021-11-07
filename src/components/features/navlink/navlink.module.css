@@ -1,7 +1,10 @@
-.link {
+.link,
+.navlink {
   color: var(--color-dark-temp);
   text-decoration: none;
+}
 
+.navlink {
   border-bottom: var(--border-size-heavy) solid transparent;
   transition: all ease-out .2s;
 }
@@ -11,11 +14,11 @@
 }
 
 @media (hover: hover) {
-  .link:not(.__active) {
+  .navlink:not(.__active) {
     border-bottom-style: dotted;
   }
 
-  .link:not(.__active):hover {
+  .navlink:not(.__active):hover {
     border-color: var(--color-dark-temp);
     border-bottom-style: dotted;
   }

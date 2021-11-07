@@ -3,6 +3,7 @@ import Jabber from "jabber";
 import Panel from "choom/lib/components/panel/Panel";
 import Flow from "choom/lib/components/layout/Flow";
 
+import { Shell } from "../../shared/shell/Shell";
 import { FootLink } from "../footlink/FootLink";
 
 import styles from "./footer.module.css";
@@ -33,10 +34,10 @@ const Footer = () => {
       as="footer"
       position="static"
       placement="bottom"
-      padding="1"
+      padding="0"
       className={styles.root}
     >
-      <div className={styles.content}>
+      <Shell dir="xy" className={styles.content}>
         <p>ACME company is well represented by the following brands:</p>
         <Flow wrap space="0.5">
           {linksData.map((link) => {
@@ -54,7 +55,7 @@ const Footer = () => {
           </FootLink>
           , 2021
         </p>
-      </div>
+      </Shell>
     </Panel>
   );
 };

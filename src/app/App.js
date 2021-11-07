@@ -1,7 +1,6 @@
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import Contain from "choom/lib/components/layout/Contain";
 import FlexUnit from "choom/lib/components/layout/FlexUnit";
 import Support from "choom/lib/components/layout/Support";
 
@@ -10,8 +9,7 @@ import store from "../redux/configure";
 
 import { Header } from "../components/features/header/Header";
 import { Footer } from "../components/features/footer/Footer";
-
-import styles from './app.module.css';
+import { Shell } from "../components/shared/shell/Shell";
 
 const App = () => {
   return (
@@ -20,9 +18,9 @@ const App = () => {
         <Support>
           <Header />
           <FlexUnit fluid>
-            <Contain space="1" as="main" className={styles.app}>
+            <Shell space="1" as="main">
               <AppRouter />
-            </Contain>
+            </Shell>
           </FlexUnit>
           <Footer />
         </Support>
