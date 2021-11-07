@@ -48,7 +48,11 @@ const Footer = () => {
           })}
         </Flow>
         <p>
-          From ACME with ♥︎ |{" "}
+          From{" "}
+          <FootLink href="https://www.acme.com/catalog/acme.html">
+            ACME
+          </FootLink>{" "}
+          with ♥︎ |{" "}
           <FootLink href="https://github.com/XOP" title="XOP">
             XOP
           </FootLink>

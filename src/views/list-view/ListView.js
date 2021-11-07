@@ -4,20 +4,19 @@ import { useNavigate, Outlet } from "react-router-dom";
 
 import Heading from "choom/lib/components/heading/Heading";
 import Flow from "choom/lib/components/layout/Flow";
-import FlexUnit from "choom/lib/components/layout/FlexUnit";
 import Loader from "choom/lib/components/loader/Loader";
 
 import {
   fetchItems,
-  itemsSelector,
+  filteredItemsSelector,
   statusSelector,
 } from "../../redux/slices/itemsSlice";
 import { STATUS } from "../../redux/globals";
 
-import { Splash } from "../../components/shared/splash/Splash";
+import { Dashboard } from "../../components/features/dashboard/Dashboard";
+import { Grid, GridUnit } from "../../components/shared/grid/Grid";
 import { Product } from "../../components/features/product/Product";
-
-import styles from "./grid.module.css";
+import { Splash } from "../../components/shared/splash/Splash";
 
 const ListView = () => {
   const dispatch = useDispatch();
@@ -27,7 +26,7 @@ const ListView = () => {
   }, [dispatch]);
 
   const status = useSelector(statusSelector);
-  const items = useSelector(itemsSelector);
+  const items = useSelector(filteredItemsSelector);
 
   const navigate = useNavigate();
 
@@ -45,20 +44,26 @@ const ListView = () => {
             </Heading>
           </Splash>
         )}
+
+        {status === STATUS.idle && <Dashboard />}
+
         {status === STATUS.idle && (
-          <section className={styles.root}>
+          <Grid>
             {!!items.length &&
               items.map(
-                ({ id, title, year, imgSrc, price, category, attrFancy, attrRare }) => {
+                ({
+                  id,
+                  title,
+                  year,
+                  imgSrc,
+                  price,
+                  category,
+                  attrFancy,
+                  attrRare,
+                }) => {
                   return (
-                    <FlexUnit
-                      grow="1"
-                      fluid
-                      align="stretch"
-                      className={styles.item}
-                    >
+                    <GridUnit key={id}>
                       <Product
-                        key={id}
                         year={year}
                         imgSrc={imgSrc}
                         price={price}
@@ -71,11 +76,11 @@ const ListView = () => {
                       >
                         {title}
                       </Product>
-                    </FlexUnit>
+                    </GridUnit>
                   );
                 }
               )}
-          </section>
+          </Grid>
         )}
       </div>
       <Outlet />
