@@ -26,6 +26,7 @@ import { Tag } from "../../shared/tag/Tag";
 import styles from "./product.module.css";
 
 const Product = ({
+  id,
   children: title,
   year,
   imgSrc,
@@ -75,7 +76,10 @@ const Product = ({
             <Button
               isIcon
               onClick={() => {
-                onSave(!isSaved);
+                onSave({
+                  id, 
+                  isSaved: !isSaved
+                });
               }}
             >
               <Icon size="regular">

@@ -3,6 +3,7 @@ import {
   createSlice,
   createSelector,
 } from "@reduxjs/toolkit";
+
 import axios from "axios";
 
 import { STATUS } from "../globals";
@@ -86,6 +87,14 @@ export const itemsSlice = createSlice({
     categoryChange(state, action) {
       state.filters.category = action.payload.toLowerCase() || "placeholder";
     },
+
+    itemSaveToggle(state, action) {
+      const { id, isSaved } = action.payload;
+
+      const item = state.items.find((item) => item.id === id);
+
+      item.isSaved = isSaved;
+    },
   },
 
   extraReducers: {
@@ -122,8 +131,13 @@ export const itemsSlice = createSlice({
   },
 });
 
-export const { modalToggle, rareToggle, fancyToggle, categoryChange } =
-  itemsSlice.actions;
+export const {
+  modalToggle,
+  rareToggle,
+  fancyToggle,
+  categoryChange,
+  itemSaveToggle,
+} = itemsSlice.actions;
 
 export const statusSelector = (state) => state.items.status;
 export const errorSelector = (state) => state.items.error;

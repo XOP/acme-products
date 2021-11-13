@@ -116,7 +116,7 @@ const Details = ({
 
                 <Divider />
 
-                <Heading as="div" level="5" align="left" colorInherit mb={1}>
+                <Heading as="div" level="5" align="left" colorInherit mb="1">
                   Estimated price: ${price}
                 </Heading>
 
@@ -129,7 +129,10 @@ const Details = ({
                       </Icon>
                     }
                     onClick={() => {
-                      onSave(!isSaved);
+                      onSave({
+                        id, 
+                        isSaved: !isSaved
+                      });
                     }}
                   >
                     {isSaved ? "Unsave..." : "Save it!"}
@@ -176,7 +179,7 @@ const Details = ({
                   </Icon>
                 }
               >
-                Maybe next time
+                {isSaved ? "Back for more" : "Maybe next time"}
               </Button>
             </Flow>
           </div>

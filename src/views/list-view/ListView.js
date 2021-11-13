@@ -11,6 +11,7 @@ import {
   fetchItems,
   filteredItemsSelector,
   statusSelector,
+  itemSaveToggle
 } from "../../redux/slices/itemsSlice";
 import { STATUS } from "../../redux/globals";
 
@@ -34,6 +35,10 @@ const ListView = () => {
   }, [items]);
 
   const navigate = useNavigate();
+
+  const handleSave = ({ id, isSaved }) => {
+    dispatch(itemSaveToggle({ id, isSaved }))
+  }
 
   return (
     <div>
@@ -65,19 +70,23 @@ const ListView = () => {
                   category,
                   attrFancy,
                   attrRare,
+                  isSaved,
                 }) => {
                   return (
                     <GridUnit key={id}>
                       <Product
+                        id={id}
                         year={year}
                         imgSrc={imgSrc}
                         price={price}
                         category={category}
                         attrFancy={attrFancy}
                         attrRare={attrRare}
+                        isSaved={isSaved}
                         onClick={() => {
                           navigate(id);
                         }}
+                        onSave={handleSave}
                       >
                         {title}
                       </Product>
