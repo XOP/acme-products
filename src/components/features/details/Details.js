@@ -4,6 +4,8 @@ import {
   IconArrowLeft,
   IconStar,
   IconStars,
+  IconBookmarkOff,
+  IconBookmark,
 } from "@tabler/icons";
 
 import Button from "choom/lib/components/button/Button";
@@ -114,9 +116,25 @@ const Details = ({
 
                 <Divider />
 
-                <Heading as="div" level="5" align="left" colorInherit>
+                <Heading as="div" level="5" align="left" colorInherit mb={1}>
                   Estimated price: ${price}
                 </Heading>
+
+                <div>
+                  <Button
+                    fluid
+                    iconStart={
+                      <Icon size="regular">
+                        {isSaved ? <IconBookmarkOff /> : <IconBookmark />}
+                      </Icon>
+                    }
+                    onClick={() => {
+                      onSave(!isSaved);
+                    }}
+                  >
+                    {isSaved ? "Unsave..." : "Save it!"}
+                  </Button>
+                </div>
               </div>
             </div>
 
@@ -153,7 +171,7 @@ const Details = ({
               <Button
                 onClick={onClose}
                 iconStart={
-                  <Icon size="inherit">
+                  <Icon size="regular">
                     <IconArrowLeft />
                   </Icon>
                 }

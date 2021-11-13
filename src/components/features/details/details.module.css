@@ -27,6 +27,8 @@
   }
 
   .media_image {
+    display: flex;
+
     flex: 55% 1;
   }
 

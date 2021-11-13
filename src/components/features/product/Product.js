@@ -1,17 +1,19 @@
 import {
   IconCalendarEvent,
   IconTag,
-  // IconBookmark,
+  IconBookmark,
+  IconBookmarkOff,
   IconStar,
   IconStars,
   IconCoin,
 } from "@tabler/icons";
 
-import LazyLoad from 'react-lazyload';
+import LazyLoad from "react-lazyload";
 
 import Heading from "choom/lib/components/heading/Heading";
 import Button from "choom/lib/components/button/Button";
 import Card from "choom/lib/components/card/Card";
+import Flow from "choom/lib/components/layout/Flow";
 import FlexUnit from "choom/lib/components/layout/FlexUnit";
 import Icon from "choom/lib/components/icon/Icon";
 import Picture from "choom/lib/components/picture/Picture";
@@ -58,11 +60,6 @@ const Product = ({
           </div>
         </FlexUnit>
 
-        {/* <Icon size="inherit">
-          <IconBookmark />
-        </Icon>
-         */}
-
         <div>
           <Tag icon={<IconCalendarEvent />} title={`Production year: ${year}`}>
             {year}
@@ -72,17 +69,32 @@ const Product = ({
           </Tag>
         </div>
         <Space size="1"></Space>
-        <Button
-          onClick={onClick}
-          fluid
-          iconEnd={
-            <Icon size="inherit">
-              <IconCoin />
-            </Icon>
-          }
-        >
-          Check Price
-        </Button>
+
+        <Flow>
+          <FlexUnit grow={0}>
+            <Button
+              isIcon
+              onClick={() => {
+                onSave(!isSaved);
+              }}
+            >
+              <Icon size="regular">
+                {isSaved ? <IconBookmarkOff /> : <IconBookmark />}
+              </Icon>
+            </Button>
+          </FlexUnit>
+          <Button
+            onClick={onClick}
+            fluid
+            iconEnd={
+              <Icon size="regular">
+                <IconCoin />
+              </Icon>
+            }
+          >
+            Check Price
+          </Button>
+        </Flow>
       </Support>
     </Card>
   );
