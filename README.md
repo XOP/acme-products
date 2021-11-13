@@ -8,7 +8,7 @@ ACME products showcase.
 Nothing fancy.
 
 Database for ACME products was originally sourced from [here](https://www.acme.com/catalog/acme.html),  
-but due to unavailability moved to [github pages](https://xop.github.io/acme-db/db.txt).
+but due to unavailability (kinda temporarily) moved to [github pages](https://xop.github.io/acme-db/db.txt).
 
 ## Main tools and Services
 
@@ -21,6 +21,7 @@ but due to unavailability moved to [github pages](https://xop.github.io/acme-db/
 
 ## Extra resources
 
+- [Jabber](https://www.npmjs.com/package/jabber)
 - [Tabler Icons](https://tabler-icons.io/)
 - [Google Fonts](https://fonts.google.com/)
 
