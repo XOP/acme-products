@@ -11,7 +11,7 @@ const Toggle = ({ children, checked, icon, onChange }) => {
       start={<Icon>{icon}</Icon>}
       end={<Switch checked={checked} onChange={onChange} />}
     >
-      <Heading as="label" level="5" align="left" colorInherit>
+      <Heading as="label" level="6" align="left" colorInherit>
         {children}
       </Heading>
     </Media>

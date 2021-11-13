@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 
-import { IconStars, IconStar } from "@tabler/icons";
+import { IconStars, IconStar, IconBookmark } from "@tabler/icons";
 
 import Flow from "choom/lib/components/layout/Flow";
 import FlexUnit from "choom/lib/components/layout/FlexUnit";
@@ -16,9 +16,12 @@ import {
   rareAttrSelector,
   fancyAttrSelector,
   categorySelector,
+  savedFilterSelector,
   rareToggle,
   fancyToggle,
+  savedToggle,
   categoryChange,
+  savedItemsAmountSelector,
   itemCategoriesSelector,
   itemsAmountSelector,
   filteredItemsAmountSelector,
@@ -27,10 +30,12 @@ import {
 const Dashboard = () => {
   const isFancyAttr = useSelector(fancyAttrSelector);
   const isRareAttr = useSelector(rareAttrSelector);
+  const isSavedFilter = useSelector(savedFilterSelector);
   const currentCategory = useSelector(categorySelector);
   const categories = useSelector(itemCategoriesSelector);
 
   const totalAmount = useSelector(itemsAmountSelector);
+  const savedAmount = useSelector(savedItemsAmountSelector);
   const filteredAmount = useSelector(filteredItemsAmountSelector);
 
   const dispatch = useDispatch();
@@ -38,13 +43,14 @@ const Dashboard = () => {
   const handleFancy = (val) => dispatch(fancyToggle(val));
   const handleRare = (val) => dispatch(rareToggle(val));
   const handleCategory = (val) => dispatch(categoryChange(val));
+  const handleSaved = (val) => dispatch(savedToggle(val));
 
   let filterMessage = "";
 
   if (filteredAmount === 0) {
-    filterMessage = "ACME hasn't produced matching items... yet"
+    filterMessage = "ACME hasn't produced matching items... yet";
   } else if (totalAmount === filteredAmount) {
-    filterMessage = `ACME catalogue counts ${totalAmount} items:`
+    filterMessage = `ACME catalogue counts ${totalAmount} items:`;
   } else {
     const s = filteredAmount > 1 ? "s" : "";
 
@@ -57,7 +63,7 @@ const Dashboard = () => {
         <Flow wrap space="2">
           <FlexUnit>
             <Flow wrap={false} space="2">
-              <FlexUnit>
+              <FlexUnit fluid>
                 <Toggle
                   icon={<IconStar />}
                   checked={isFancyAttr}
@@ -66,7 +72,7 @@ const Dashboard = () => {
                   Fancy
                 </Toggle>
               </FlexUnit>
-              <FlexUnit>
+              <FlexUnit fluid>
                 <Toggle
                   icon={<IconStars />}
                   checked={isRareAttr}
@@ -78,15 +84,30 @@ const Dashboard = () => {
             </Flow>
           </FlexUnit>
           <FlexUnit basis="50%">
-            <Select value={currentCategory} onChange={handleCategory}>
-              {categories.map((cat) => {
-                return (
-                  <SelectOption key={cat} value={cat}>
-                    {cat === "placeholder" ? "All categories" : cat}
-                  </SelectOption>
-                );
-              })}
-            </Select>
+            <Flow wrap={false} space="2">
+              {savedAmount > 0 && (
+                <FlexUnit fluid>
+                  <Toggle
+                    icon={<IconBookmark />}
+                    checked={isSavedFilter}
+                    onChange={handleSaved}
+                  >
+                    Saved
+                  </Toggle>
+                </FlexUnit>
+              )}
+              <FlexUnit fluid>
+                <Select value={currentCategory} onChange={handleCategory}>
+                  {categories.map((cat) => {
+                    return (
+                      <SelectOption key={cat} value={cat}>
+                        {cat === "placeholder" ? "All categories" : cat}
+                      </SelectOption>
+                    );
+                  })}
+                </Select>
+              </FlexUnit>
+            </Flow>
           </FlexUnit>
         </Flow>
       </Panel>

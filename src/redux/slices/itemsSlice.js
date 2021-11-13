@@ -26,6 +26,7 @@ const initialState = {
   filters: {
     attrFancy: false,
     attrRare: false,
+    saved: false,
     category: "placeholder",
   },
 };
@@ -84,6 +85,10 @@ export const itemsSlice = createSlice({
       state.filters.attrFancy = !!action.payload;
     },
 
+    savedToggle(state, action) {
+      state.filters.saved = !!action.payload;
+    },
+
     categoryChange(state, action) {
       state.filters.category = action.payload.toLowerCase() || "placeholder";
     },
@@ -94,6 +99,10 @@ export const itemsSlice = createSlice({
       const item = state.items.find((item) => item.id === id);
 
       item.isSaved = isSaved;
+
+      if (state.items.filter(({ isSaved }) => isSaved).length === 0) {
+        state.filters.saved = false;
+      }
     },
   },
 
@@ -135,6 +144,7 @@ export const {
   modalToggle,
   rareToggle,
   fancyToggle,
+  savedToggle,
   categoryChange,
   itemSaveToggle,
 } = itemsSlice.actions;
@@ -153,6 +163,7 @@ export const itemSelector = createSelector(
 export const rareAttrSelector = (state) => state.items.filters.attrRare;
 export const fancyAttrSelector = (state) => state.items.filters.attrFancy;
 export const categorySelector = (state) => state.items.filters.category;
+export const savedFilterSelector = (state) => state.items.filters.saved;
 
 export const itemsAmountSelector = createSelector(
   [(state) => state.items.items],
@@ -176,6 +187,10 @@ export const filteredItemsSelector = createSelector(
       _items = _items.filter(({ category }) => category === filters.category);
     }
 
+    if (filters.saved) {
+      _items = _items.filter(({ isSaved }) => isSaved === true);
+    }
+
     return _items;
   }
 );
@@ -183,6 +198,11 @@ export const filteredItemsSelector = createSelector(
 export const filteredItemsAmountSelector = createSelector(
   [filteredItemsSelector],
   (items) => items.length
+);
+
+export const savedItemsAmountSelector = createSelector(
+  [(state) => state.items.items],
+  (items) => items.filter(item => item.isSaved).length
 );
 
 export default itemsSlice.reducer;
