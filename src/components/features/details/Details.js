@@ -8,17 +8,19 @@ import {
   IconBookmark,
 } from "@tabler/icons";
 
-import Button from "choom/lib/components/button/Button";
-import Flow from "choom/lib/components/layout/Flow";
-import Divider from "choom/lib/components/divider/Divider";
-import Heading from "choom/lib/components/heading/Heading";
-import Icon from "choom/lib/components/icon/Icon";
-import Loader from "choom/lib/components/loader/Loader";
-import Media from "choom/lib/components/layout/Media";
-import Modal from "choom/lib/components/modal/Modal";
-import Picture from "choom/lib/components/picture/Picture";
-import Space from "choom/lib/components/space/Space";
-import Stack from "choom/lib/components/layout/Stack";
+import {
+  Button,
+  Flow,
+  Divider,
+  Heading,
+  Icon,
+  Loader,
+  Media,
+  Modal,
+  Picture,
+  Space,
+  Stack,
+} from "choom-react";
 
 import { Splash } from "../../shared/splash/Splash";
 import { Badge } from "../../shared/badge/Badge";
@@ -130,8 +132,8 @@ const Details = ({
                     }
                     onClick={() => {
                       onSave({
-                        id, 
-                        isSaved: !isSaved
+                        id,
+                        isSaved: !isSaved,
                       });
                     }}
                   >

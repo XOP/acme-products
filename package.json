@@ -11,7 +11,8 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
-    "choom": "0.0.5",
+    "choom-react": "0.3.2",
+    "choom-theme": "^0.1.0",
     "clsx": "^1.1.1",
     "jabber": "^1.2.2",
     "nanoid": "^3.1.30",
@@ -25,7 +26,6 @@
   },
   "scripts": {
     "data": "node service/generateData.js",
-    "predev": "yarn data",
     "prebuild": "yarn data",
     "dev": "react-scripts start",
     "build": "react-scripts build"

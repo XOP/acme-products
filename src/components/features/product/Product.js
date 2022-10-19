@@ -10,15 +10,17 @@ import {
 
 import LazyLoad from "react-lazyload";
 
-import Heading from "choom/lib/components/heading/Heading";
-import Button from "choom/lib/components/button/Button";
-import Card from "choom/lib/components/card/Card";
-import Flow from "choom/lib/components/layout/Flow";
-import FlexUnit from "choom/lib/components/layout/FlexUnit";
-import Icon from "choom/lib/components/icon/Icon";
-import Picture from "choom/lib/components/picture/Picture";
-import Space from "choom/lib/components/space/Space";
-import Support from "choom/lib/components/layout/Support";
+import {
+  Heading,
+  Button,
+  Card,
+  Flow,
+  FlexUnit,
+  Icon,
+  Picture,
+  Space,
+  Support,
+} from "choom-react";
 
 import { Badge } from "../../shared/badge/Badge";
 import { Tag } from "../../shared/tag/Tag";
@@ -77,8 +79,8 @@ const Product = ({
               isIcon
               onClick={() => {
                 onSave({
-                  id, 
-                  isSaved: !isSaved
+                  id,
+                  isSaved: !isSaved,
                 });
               }}
             >

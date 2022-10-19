@@ -1,8 +1,4 @@
-import Heading from "choom/lib/components/heading/Heading";
-import Flex from "choom/lib/components/layout/Flex";
-import Flow from "choom/lib/components/layout/Flow";
-import FlexUnit from "choom/lib/components/layout/FlexUnit";
-import Panel from "choom/lib/components/panel/Panel";
+import { Heading, Flex, Flow, FlexUnit, Panel } from "choom-react";
 
 import { Shell } from "../../shared/shell/Shell";
 

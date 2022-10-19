@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import Contain from "choom/lib/components/layout/Contain";
+import { Contain } from "choom-react";
 
 import styles from "./shell.module.css";
 

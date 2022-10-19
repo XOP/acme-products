@@ -1,5 +1,4 @@
-import Chip from "choom/lib/components/chip/Chip";
-import Icon from "choom/lib/components/icon/Icon";
+import { Chip, Icon } from "choom-react";
 
 const Badge = ({ children, title }) => {
   return (

@@ -1,11 +1,7 @@
 import { useNavigate } from "react-router";
 import { IconArrowRight } from "@tabler/icons";
 
-import Button from "choom/lib/components/button/Button";
-import Flow from "choom/lib/components/layout/Flow";
-import Heading from "choom/lib/components/heading/Heading";
-import Icon from "choom/lib/components/icon/Icon";
-import Space from "choom/lib/components/space/Space";
+import { Button, Heading, Flow, Icon, Space } from "choom-react";
 
 import { Logo } from "../../components/features/logo/Logo";
 import { Splash } from "../../components/shared/splash/Splash";
@@ -43,7 +39,9 @@ const IntroView = () => {
               <IconArrowRight />
             </Icon>
           }
-          onClick={() => {navigate(routeNames.LIST)}}
+          onClick={() => {
+            navigate(routeNames.LIST);
+          }}
         >
           Find out more
         </Button>

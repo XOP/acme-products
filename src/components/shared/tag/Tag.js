@@ -1,8 +1,6 @@
-import Chip from "choom/lib/components/chip/Chip";
-import Icon from "choom/lib/components/icon/Icon";
-import Media from "choom/lib/components/layout/Media";
+import { Chip, Icon, Media } from "choom-react";
 
-import styles from './tag.module.css';
+import styles from "./tag.module.css";
 
 const Tag = ({ children, icon, title }) => {
   return (

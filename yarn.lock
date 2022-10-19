@@ -3327,15 +3327,21 @@ chokidar@^3.4.1:
   optionalDependencies:
     fsevents "~2.3.1"
 
-choom@0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/choom/-/choom-0.0.5.tgz#ed47c2f6d429721473a279a42bd4ec34610228dc"
-  integrity sha512-d2lFD4loa+nJOSGoMBsSyzpZV9GJWyAuAT2n4V8RcSiRDKjPZ3ydx5+WgqNW2rMzruF3I3u077FMeM5ntPOKzQ==
+choom-react@0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/choom-react/-/choom-react-0.3.2.tgz#e15be10ae421678ca01b1a9011bff53477190e96"
+  integrity sha512-9RJm4hpbX6gwiTpuJmSEwChc3NDqPnFIiaVosoGRrVU6vircmEyM5rwii0HIa+GDKTq2RW4bxpYbACmm1MhMaA==
   dependencies:
     "@emotion/react" "^11.0.0"
+    choom-theme "0.1.0"
     nanoid "^3.1.29"
     prop-types "^15.7.2"
     react-feather "^2.0.9"
+
+choom-theme@0.1.0, choom-theme@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/choom-theme/-/choom-theme-0.1.0.tgz#927dc77fb70a2229f3c77cd89150af27db4563d4"
+  integrity sha512-2g1MWB5C/zfVqS3TAw20zhpbAxODjr0ROJJ+AA/8DtHbhlZKXK/UJId1ISyQ3WF1JTteIjBVmdX/oYjHbiM3Lg==
 
 chownr@^1.1.1:
   version "1.1.4"

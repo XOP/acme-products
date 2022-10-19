@@ -1,6 +1,6 @@
-import Picture from "choom/lib/components/picture/Picture";
+import { Picture } from "choom-react";
 
-import styles from './logo.module.css';
+import styles from "./logo.module.css";
 
 const Logo = () => {
   return (

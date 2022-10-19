@@ -3,15 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Outlet } from "react-router-dom";
 import { forceCheck } from "react-lazyload";
 
-import Heading from "choom/lib/components/heading/Heading";
-import Flow from "choom/lib/components/layout/Flow";
-import Loader from "choom/lib/components/loader/Loader";
+import { Heading, Flow, Loader } from "choom-react";
 
 import {
   fetchItems,
   filteredItemsSelector,
   statusSelector,
-  itemSaveToggle
+  itemSaveToggle,
 } from "../../redux/slices/itemsSlice";
 import { STATUS } from "../../redux/globals";
 
@@ -37,8 +35,8 @@ const ListView = () => {
   const navigate = useNavigate();
 
   const handleSave = ({ id, isSaved }) => {
-    dispatch(itemSaveToggle({ id, isSaved }))
-  }
+    dispatch(itemSaveToggle({ id, isSaved }));
+  };
 
   return (
     <div>

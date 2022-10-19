@@ -1,7 +1,9 @@
 import Jabber from "jabber";
 
-import Panel from "choom/lib/components/panel/Panel";
-import Flow from "choom/lib/components/layout/Flow";
+import {
+  Flow,
+  Panel,
+} from 'choom-react';
 
 import { Shell } from "../../shared/shell/Shell";
 import { FootLink } from "../footlink/FootLink";

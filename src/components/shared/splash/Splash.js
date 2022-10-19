@@ -1,7 +1,6 @@
-import Contain from "choom/lib/components/layout/Contain";
-import Hold from "choom/lib/components/layout/Hold";
+import { Contain, Hold } from "choom-react";
 
-import styles from './splash.module.css';
+import styles from "./splash.module.css";
 
 const Splash = ({ children }) => {
   return (

@@ -1,7 +1,4 @@
-import Heading from "choom/lib/components/heading/Heading";
-import Icon from "choom/lib/components/icon/Icon";
-import Media from "choom/lib/components/layout/Media";
-import Switch from "choom/lib/components/switch/Switch";
+import { Heading, Icon, Media, Switch } from "choom-react";
 
 const Toggle = ({ children, checked, icon, onChange }) => {
   return (

@@ -1,4 +1,4 @@
-import FlexUnit from "choom/lib/components/layout/FlexUnit";
+import { FlexUnit } from "choom-react";
 
 import styles from "./grid.module.css";
 

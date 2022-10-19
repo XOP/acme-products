@@ -2,13 +2,15 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { IconStars, IconStar, IconBookmark } from "@tabler/icons";
 
-import Flow from "choom/lib/components/layout/Flow";
-import FlexUnit from "choom/lib/components/layout/FlexUnit";
-import Heading from "choom/lib/components/heading/Heading";
-import Panel from "choom/lib/components/panel/Panel";
-import Select from "choom/lib/components/select/Select";
-import SelectOption from "choom/lib/components/select/SelectOption";
-import Space from "choom/lib/components/space/Space";
+import {
+  Flow,
+  FlexUnit,
+  Heading,
+  Panel,
+  Select,
+  SelectOption,
+  Space,
+} from "choom-react";
 
 import { Toggle } from "../../shared/toggle/Toggle";
 
